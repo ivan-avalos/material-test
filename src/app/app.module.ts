@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 // Material 
 import { MatMenuModule } from '@angular/material/menu';
@@ -15,13 +16,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule, MatCard } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ExtraComponent } from './extra/extra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    DialogComponent,
+    ExtraComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +39,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatToolbarModule,
     MatCardModule,
     MatSnackBarModule,
+    MatDialogModule,
+    MatSidenavModule,
+    MatTabsModule,
     RouterModule.forRoot([
-      { path:'', component:HomeComponent, pathMatch:'full' }
+      { path:'', component:HomeComponent},
+      { path: 'extra', component:ExtraComponent}
     ])
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,23 @@
 <div class="navbar-fixed">
-    <nav class="indigo darken-3">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">{{title}}</a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="sass.html">Sass</a>
-            </li>
-            <li>
-              <a href="badges.html">Components</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="indigo darken-3">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">{{title}}</a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a (click)="openDialog()">Show a dialog</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
-  
+    </div>
+  </nav>
+</div>
+
+<nav mat-tab-nav-bar class="indigo darken-3">
+  <a mat-tab-link class="white-text" [routerLink]="['']">
+    Home
+  </a>
+  <a mat-tab-link class="white-text" [routerLink]="['extra']">
+    Extra
+  </a>
+</nav>
